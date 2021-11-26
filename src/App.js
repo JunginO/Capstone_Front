@@ -8,11 +8,13 @@ import Write from "./pages/ListManage";
 import Mylist from "./pages/Mylist";
 import PublicRoute from "./layout/PublicRoute";
 import PrivateRoute from "./layout/PrivateRoute";
+import Feed from "./pages/Feed";
 const App = () => {
   return (
     <BrowserRouter>
       <HeaderContainer />
       <Switch>
+        <Route exact path="/feed" component={Feed} />
         <PublicRoute exact path="/auth/login" component={Login} />
         <PublicRoute exact path="/auth/register" component={Register} />
         <PrivateRoute exact path="/playlist" component={Playlist} />

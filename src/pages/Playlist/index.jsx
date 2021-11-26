@@ -5,12 +5,18 @@ import { playlistContents } from "../../components/dummyData";
 import { playlist } from "../../components/dummyData";
 import PlaylistTop from "./components/PlaylistTop";
 import PlaylistMid from "./components/PlaylistMid";
+import { comments } from "../../components/dummyData";
+import PlaylistCommentBox from "./components/PlaylistCommentBox";
+import PlaylistComment from "./components/PlaylistComment";
 const MainWrapper = styled.div`
   margin-top: 55px;
   .contents-wrapper {
   }
   .main-wrapper {
     margin: 0px 100px;
+  }
+  .comment {
+    margin-top: 10px;
   }
 `;
 
@@ -30,6 +36,12 @@ const Index = () => {
         <div className="contents-wrapper">
           {playlistContents.map((data) => (
             <PlaylistContentBox data={data} />
+          ))}
+        </div>
+        <div className="comment">
+          <PlaylistComment />
+          {comments.map((data) => (
+            <PlaylistCommentBox data={data} />
           ))}
         </div>
       </div>
