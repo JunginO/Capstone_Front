@@ -7,7 +7,7 @@ const TopWrapper = styled.div`
     height: 120px;
   }
   .top-part {
-    background-color: #157a9c;
+    background-color: lightgray;
     margin: 0px 100px;
   }
   .bottom-box {

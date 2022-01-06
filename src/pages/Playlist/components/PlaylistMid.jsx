@@ -25,7 +25,6 @@ const PlaylistMid = ({ data }) => {
       <div className="mid-box">
         <div className="content">{data.content}</div>
         <span>시작날짜:{data.startDate}</span>
-        <span>종료날짜:{data.endDate}</span>
         <div className="tag-box">
           <TagButton data={data.tag} />
           <TagButton data={data.tag} />

@@ -38,15 +38,16 @@ const Index = () => {
             <PlaylistContentBox data={data} />
           ))}
         </div>
-        <div className="comment">
-          <PlaylistComment />
-          {comments.map((data) => (
-            <PlaylistCommentBox data={data} />
-          ))}
-        </div>
       </div>
     </MainWrapper>
   );
 };
 
 export default Index;
+/*
+<div className="comment">
+          <PlaylistComment />
+          {comments.map((data) => (
+            <PlaylistCommentBox data={data} />
+          ))}
+        </div>*/

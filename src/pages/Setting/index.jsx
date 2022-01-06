@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import MypageList from "./components/Mylist";
+import SettingTop from "./components/SettingTop";
 
 const MainWrapper = styled.div``;
 
 const Index = () => {
   return (
     <MainWrapper>
-      <MypageList />
+      <SettingTop />
     </MainWrapper>
   );
 };

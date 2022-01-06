@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import MypageList from "./components/Mylist";
-
-const MainWrapper = styled.div``;
+import Explore from "./components/Explore";
+const MainWrapper = styled.div`
+  margin-top: 55px;
+`;
 
 const Index = () => {
   return (
     <MainWrapper>
-      <MypageList />
+      <Explore />
     </MainWrapper>
   );
 };

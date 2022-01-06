@@ -1,38 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import ProfilePackage from "../../../components/ProfilePackage";
-import TagButton from "../../../components/TagButton";
+
 const BoxWrapper = styled.div`
   .content-box {
-    border-bottom: 1px solid skyblue;
+    border: 1px solid skyblue;
+    border-radius: 5px;
     padding: 10px;
-    margin-top: 10px;
+    margin: 10px;
   }
   .title {
     font-weight: bold;
+    border-bottom: 1px solid skyblue;
+    margin-left: 3px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
   }
   .tag-box {
     margin-top: 5px;
     height: 25px;
   }
-  .btn {
-    float: right;
+  span {
+    color: gray;
+  }
+  .content {
+    margin: 3px;
   }
 `;
 const MypageContentBox = ({ data }) => {
   return (
     <BoxWrapper>
       <div className="content-box">
-        <ProfilePackage data={data} />
-        <div className="btn">
-          <TagButton data="좋아요" />
-        </div>
         <div className="main-box">
           <div className="title">{data.title}</div>
-          <div className="content">{data.content}</div>
-        </div>
-        <div className="tag-box">
-          <TagButton data={data.tag} />
+          <div className="content">
+            <span>이전: </span>
+            {data.first}
+          </div>
+          <div className="content">
+            <span>이후: </span> {data.second}
+          </div>
         </div>
       </div>
     </BoxWrapper>

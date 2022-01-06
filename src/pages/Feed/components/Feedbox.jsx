@@ -10,7 +10,7 @@ const BoxWrapper = styled.div`
     padding: 10px;
     margin-bottom: 10px;
   }
-  .title {
+  .bigtitle {
     font-weight: bold;
   }
   .tag-box {
@@ -35,6 +35,7 @@ const Feedbox = ({ data }) => {
         <div className="content-box">
           <ProfilePackage data={data} />
           <div className="main-box">
+            <div className="bigtitle">{data.bigtitle}</div>
             <div className="title">{data.title}</div>
             <div className="content">{data.content}</div>
           </div>
