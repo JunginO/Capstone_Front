@@ -12,6 +12,7 @@ import PrivateRoute from "./layout/PrivateRoute";
 import Feed from "./pages/Feed";
 import Setting from "./pages/Setting";
 import Explore from "./pages/Explore";
+import EditProfile from "./pages/Setting/components/EditProfile";
 const App = () => {
   return (
     <BrowserRouter>
@@ -26,6 +27,7 @@ const App = () => {
         <PrivateRoute exact path="/write" component={Write} />
         <PrivateRoute exact path="/mylist" component={Mylist} />
         <Route exact path="/explore" component={Explore} />
+        <Route exact path="/editprofile" component={EditProfile} />
       </Switch>
     </BrowserRouter>
   );

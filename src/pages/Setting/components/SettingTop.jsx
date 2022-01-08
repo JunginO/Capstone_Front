@@ -63,7 +63,7 @@ const SettingTop = () => {
           <img className="profile" alt="profileimg" src={imgs} />
           <h3>{JSON.parse(id)}</h3>
           <div className="button-box">
-            <SettingButton>정보 수정</SettingButton>
+            <SettingButton to="/editprofile">정보 수정</SettingButton>
             <SettingButton to="/" onClick={setData}>
               로그아웃
             </SettingButton>
