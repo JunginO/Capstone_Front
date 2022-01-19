@@ -9,6 +9,11 @@ const ButtonBox = styled.button`
   margin-right: 5px;
   height: 100%;
   font-size: 80%;
+
+  &:hover {
+    background-color: #608491;
+    color: white;
+  }
 `;
 const TagButton = ({ data }) => {
   return <ButtonBox>{data}</ButtonBox>;
