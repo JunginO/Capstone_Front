@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ProfilePackage from "../../../components/ProfilePackage";
-import heart from "../../../assets/whiteheart.png";
+import wheart from "../../../assets/whiteheart.png";
+import bheart from "../../../assets/blackheart.png";
 import comment from "../../../assets/comment.png";
 import { Link } from "react-router-dom";
 const BoxWrapper = styled.div`
@@ -26,29 +27,38 @@ const BoxWrapper = styled.div`
     color: inherit;
     text-decoration: inherit;
   }
+  .likebtn {
+    border: none;
+  }
 `;
 
 const Feedbox = ({ data }) => {
+  const [liked, setLiked] = useState(null);
+
   return (
     <BoxWrapper>
-      <Link to="/playlist" className="text-link">
-        <div className="content-box">
+      <div className="content-box">
+        <Link to="/playlist" className="text-link">
           <ProfilePackage data={data} />
           <div className="main-box">
             <div className="bigtitle">{data.bigtitle}</div>
             <div className="title">{data.title}</div>
             <div className="content">{data.content}</div>
           </div>
-          <div>
-            <span>
-              <img className="icon-box" src={heart} alt="like" />
-              {data.like}
-            </span>
-            <img className="icon-box" src={comment} alt="comment" />
-            <span>{data.comment}</span>
-          </div>
+        </Link>
+        <div>
+          <button className="likebtn" onClick={() => setLiked(!liked)}>
+            <img
+              className="icon-box"
+              src={liked ? bheart : wheart}
+              alt="like"
+            />
+            {liked ? data.like + 1 : data.like}
+          </button>
+          <img className="icon-box" src={comment} alt="comment" />
+          <span>{data.comment}</span>
         </div>
-      </Link>
+      </div>
     </BoxWrapper>
   );
 };
