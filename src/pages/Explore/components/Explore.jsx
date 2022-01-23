@@ -21,7 +21,7 @@ const Explore = () => {
       <div className="playlist">
         <p>인기 플레이리스트</p>
         <SlideStyler
-          slidesPerView={5}
+          slidesPerView={7}
           spaceBetween={10}
           pagination={{
             clickable: true,
@@ -65,11 +65,99 @@ const Explore = () => {
       </div>
       <div className="playlist">
         <p>관심주제:개발</p>
-        <div>플레이리스트박스들</div>
+        <div>
+          {" "}
+          <SlideStyler
+            slidesPerView={7}
+            spaceBetween={10}
+            pagination={{
+              clickable: true,
+            }}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+          </SlideStyler>
+        </div>
       </div>
       <div className="playlist">
         <p>관심주제:음악</p>
-        <div>플레이리스트박스들</div>
+        <div>
+          {" "}
+          <SlideStyler
+            slidesPerView={7}
+            spaceBetween={10}
+            pagination={{
+              clickable: true,
+            }}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ExploreBox />
+            </SwiperSlide>
+          </SlideStyler>
+        </div>
       </div>
     </MainWrapper>
   );

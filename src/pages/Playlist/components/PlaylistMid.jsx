@@ -17,18 +17,23 @@ const MidWrapper = styled.div`
   .content {
     margin: 3px 0px;
   }
+  button {
+    width: 100%;
+  }
 `;
 
 const PlaylistMid = ({ data }) => {
   return (
     <MidWrapper>
       <div className="mid-box">
+        <button>나의 리스트에 추가하기</button>
         <div className="content">{data.content}</div>
-        <span>시작날짜:{data.startDate}</span>
+
+        {/*<span>시작날짜:{data.startDate}</span>
         <div className="tag-box">
           <TagButton data={data.tag} />
           <TagButton data={data.tag} />
-        </div>
+        </div>*/}
       </div>
     </MidWrapper>
   );

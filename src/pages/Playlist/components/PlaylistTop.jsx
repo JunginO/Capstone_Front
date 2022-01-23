@@ -4,11 +4,10 @@ import ProfilePackage from "../../../components/ProfilePackage";
 import TagButton from "../../../components/TagButton";
 const TopWrapper = styled.div`
   .top-back {
-    height: 120px;
+    background-color: lightgray;
   }
   .top-part {
-    background-color: lightgray;
-    margin: 0px 100px;
+    display: inline-block;
   }
   .bottom-box {
     display: flex;
@@ -21,20 +20,34 @@ const TopWrapper = styled.div`
     display: flex;
     margin-left: 10px;
   }
+  .img-box {
+    width: 180px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 100px;
+    padding: 10px;
+  }
 `;
 
 const PlaylistTop = ({ data }) => {
   return (
     <TopWrapper>
       <div className="top-back">
+        <img
+          className="img-box"
+          alt="img"
+          src="https://blog.kakaocdn.net/dn/MwAL3/btqIJblKgo9/DWvKIbp3GoDoin6yNH4amK/img.png"
+        ></img>
         <div className="top-part">
           <h1>{data.title}</h1>
           <div className="bottom-box">
             <ProfilePackage data={data} />
+            {/*
             <div className="like-btn">
               <TagButton data="좋아요" />
               <TagButton data="추가+" />
             </div>
+            */}
           </div>
         </div>
       </div>

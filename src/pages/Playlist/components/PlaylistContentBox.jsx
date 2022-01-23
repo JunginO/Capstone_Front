@@ -30,7 +30,7 @@ const PlaylistContentBox = ({ data }) => {
         <div className="plan-box-title">{data.title}</div>
         <div className="plan-box-content">
           <span>{data.content}</span>
-          <span>{data.time}</span>
+          <span>소요시간: {data.time} 분</span>
         </div>
       </div>
     </BoxWrapper>

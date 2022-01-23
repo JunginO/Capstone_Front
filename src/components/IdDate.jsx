@@ -16,7 +16,7 @@ const IdDate = ({ data }) => {
     <IdDateWrapper>
       <div>
         <span className="id">{data.id}</span>
-        <p className="date">{data.date}</p>
+        {/*<p className="date">{data.date}</p>*/}
       </div>
     </IdDateWrapper>
   );

@@ -1,10 +1,11 @@
 export const playlist = [
   {
-    title: "제목은 여기에",
-    id: "아이디",
+    title: "토익 900 달성",
+    id: "김예원님",
     date: "2021/07/28 14:18",
     like: 10,
-    content: "본문 내용이 여기에 존재할 예정",
+    content:
+      "영어의 기반이 생겼다고 느낄 때 기출문제집 공부를 시작했습니다. 풀이법은 다른 사람이 가르쳐주는 것보다 본인에게 맞는 방법을 찾는 것이 중요합니다. ",
     startDate: "02/08",
     endDate: "03/21",
     tag: "태그",
@@ -52,18 +53,18 @@ export const feed = [
 export const playlistContents = [
   {
     title: "1차시",
-    content: "파트 2회분",
-    time: "2h",
+    content: "PART5 2회분 풀기, 놓치고 있던 문법 정리하기",
+    time: "100",
   },
   {
     title: "2차시",
-    content: "파트 2회분",
-    time: "2h",
+    content: "PART5 2회분 풀기,의문사에 집중하기! 들릴때까지 반복",
+    time: "120",
   },
   {
     title: "3차시",
-    content: "파트 2회분",
-    time: "2h",
+    content: "PART5 2회분 풀기, 놓치고 있던 문법 정리하기",
+    time: "120",
   },
 ];
 export const comments = [

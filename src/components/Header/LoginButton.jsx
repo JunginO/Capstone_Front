@@ -15,9 +15,12 @@ const LoginButton = () => {
 
   return localStorage.getItem("logged-in") ? (
     <div>
-      <BorderedButton to="/">HOME</BorderedButton>
-      <BorderedButton to="write">새로 포스팅</BorderedButton>
+      <BorderedButton to="/">HOME(feed)</BorderedButton>
+      <BorderedButton to="/write">write</BorderedButton>
+      <BorderedButton to="/listmanage">listmanage</BorderedButton>
       <BorderedButton to="/mylist">MyList</BorderedButton>
+      <BorderedButton to="/playlist">playlist</BorderedButton>
+      <BorderedButton to="/explore">explore</BorderedButton>
       <BorderedButton to="/setting">{JSON.parse(id)}</BorderedButton>
     </div>
   ) : (
