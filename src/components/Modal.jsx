@@ -12,6 +12,7 @@ const Modal = (props) => {
   return (
     <ReactModal
       isOpen={isOpen}
+      onRequestClose={onCancel}
       style={{
         overlay: {
           position: "fixed",

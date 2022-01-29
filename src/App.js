@@ -13,6 +13,7 @@ import Feed from "./pages/Feed";
 import Setting from "./pages/Setting";
 import Explore from "./pages/Explore";
 import EditProfile from "./pages/Setting/components/EditProfile";
+import Search from "./pages/Search";
 const App = () => {
   return (
     <BrowserRouter>
@@ -28,6 +29,7 @@ const App = () => {
         <PrivateRoute exact path="/mylist" component={Mylist} />
         <Route exact path="/explore" component={Explore} />
         <Route exact path="/editprofile" component={EditProfile} />
+        <Route exact path="/search" component={Search} />
       </Switch>
     </BrowserRouter>
   );

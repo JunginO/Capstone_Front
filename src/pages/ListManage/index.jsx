@@ -5,9 +5,9 @@ import PlaylistContentBox from "../Playlist/components/PlaylistContentBox";
 import { playlistContents } from "../../components/dummyData";
 import { ListDetail } from "../../components/dummyData";
 import profileimg from "../../assets/profileimg.png";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
+import ReactModal from "react-modal";
 import Modal from "../../components/Modal";
-
 const PostWrapper = styled.div`
   .main {
     margin: 0px 100px;
@@ -54,9 +54,11 @@ const Index = () => {
   };
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const handleClose = () => {
-    setModalIsOpen(false);
+  const handleClick = () => {
+    setModalIsOpen(!modalIsOpen);
+    console.log(modalIsOpen);
   };
+
   return (
     <PostWrapper>
       <div className="main">
@@ -75,11 +77,10 @@ const Index = () => {
             <PlaylistContentBox data={data} />
           ))}
         </div>
-        <div className="add-plan-box" onClick={() => setModalIsOpen(true)}>
-          <Modal isOpen={modalIsOpen} onCancel={handleClose} />
-          <span className="plan-box-title">4차시</span>
-          <span className="plan-box-content">추가하기</span>
-        </div>
+        <button className="add-plan-box" onClick={() => setModalIsOpen(true)}>
+          추가하기
+        </button>
+        <Modal isOpen={modalIsOpen} onCancel={handleClick} />
       </div>
     </PostWrapper>
   );
