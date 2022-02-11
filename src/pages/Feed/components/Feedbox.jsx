@@ -5,6 +5,8 @@ import wheart from "../../../assets/whiteheart.png";
 import bheart from "../../../assets/blackheart.png";
 import comment from "../../../assets/comment.png";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
 const BoxWrapper = styled.div`
   .content-box {
     border-bottom: 10px solid lightgray;
@@ -34,7 +36,16 @@ const BoxWrapper = styled.div`
 
 const Feedbox = ({ data }) => {
   const [liked, setLiked] = useState(null);
-
+  const dispatch = useDispatch();
+  const { value } = useSelector((state) => state.value);
+  const addValue = () => {
+    setLiked(!liked);
+    if (liked) {
+      dispatch({ type: "decrement" });
+    } else {
+      dispatch({ type: "increment" });
+    }
+  };
   return (
     <BoxWrapper>
       <div className="content-box">
@@ -47,13 +58,13 @@ const Feedbox = ({ data }) => {
           </div>
         </Link>
         <div>
-          <button className="likebtn" onClick={() => setLiked(!liked)}>
+          <button className="likebtn" onClick={() => addValue()}>
             <img
               className="icon-box"
               src={liked ? bheart : wheart}
               alt="like"
             />
-            {liked ? data.like + 1 : data.like}
+            {value}
           </button>
           <img className="icon-box" src={comment} alt="comment" />
           <span>{data.comment}</span>
