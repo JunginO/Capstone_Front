@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactModal from "react-modal";
 
-const Modal = (props) => {
+const InputModal = (props) => {
   const { isOpen, onCancel } = props;
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
@@ -11,7 +11,7 @@ const Modal = (props) => {
   };
   return (
     <ReactModal
-      isOpen={isOpen}
+      isOpened={isOpen}
       onRequestClose={onCancel}
       style={{
         overlay: {
@@ -58,4 +58,4 @@ const Modal = (props) => {
     </ReactModal>
   );
 };
-export default Modal;
+export default InputModal;

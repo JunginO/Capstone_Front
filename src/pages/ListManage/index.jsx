@@ -6,8 +6,7 @@ import { playlistContents } from "../../components/dummyData";
 import { ListDetail } from "../../components/dummyData";
 import profileimg from "../../assets/profileimg.png";
 import { useState } from "react";
-import ReactModal from "react-modal";
-import Modal from "../../components/Modal";
+import Modal from "../../components/InputModal";
 const PostWrapper = styled.div`
   .main {
     margin: 0px 100px;
