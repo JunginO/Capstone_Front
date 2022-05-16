@@ -1,55 +1,58 @@
 import React from "react";
 import styled from "styled-components";
 import ProfilePackage from "../../../components/ProfilePackage";
-import TagButton from "../../../components/TagButton";
+import { Button } from "react-bootstrap";
+import images from "../../../assets/images.png";
+import { useState } from "react";
+
+import { AlertModal } from "../../../components/AlertModal";
 const TopWrapper = styled.div`
-  .top-back {
-    background-color: lightgray;
-  }
-  .top-part {
-    display: inline-block;
-  }
-  .bottom-box {
-    display: flex;
-    justify-content: space-between;
-  }
-  .like-btn {
-    height: 25px;
-  }
-  .img-id-box {
-    display: flex;
-    margin-left: 10px;
-  }
+  margin-top: 55px;
+  padding: 50px 0 0;
+
   .img-box {
-    width: 180px;
+    width: 240px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+  }
+  .title-box {
     display: inline-block;
-    vertical-align: top;
-    margin-left: 100px;
-    padding: 10px;
+    margin-left: 10px;
+    padding: 14px 50px 0px 35px;
+  }
+  .content-box {
+    font-weight: 200;
+  }
+  h2 {
+    font-weight: bold;
+  }
+  .upper-box {
+    padding: 0 0 0 50px;
   }
 `;
 
 const PlaylistTop = ({ data }) => {
+  const [showmodal, setShowModal] = useState(false);
   return (
     <TopWrapper>
-      <div className="top-back">
-        <img
-          className="img-box"
-          alt="img"
-          src="https://blog.kakaocdn.net/dn/MwAL3/btqIJblKgo9/DWvKIbp3GoDoin6yNH4amK/img.png"
-        ></img>
-        <div className="top-part">
-          <h1>{data.title}</h1>
+      <div className="upper-box">
+        <img className="img-box" src={images} alt="사진"></img>
+        <div className="title-box">
+          <h2>{data.title}</h2>
           <div className="bottom-box">
             <ProfilePackage data={data} />
-            {/*
-            <div className="like-btn">
-              <TagButton data="좋아요" />
-              <TagButton data="추가+" />
-            </div>
-            */}
           </div>
+          <AlertModal
+            size="sm"
+            show={showmodal}
+            onHide={() => setShowModal(false)}
+            text={"추가됨"}
+          />
+          <Button variant="primary" onClick={() => setShowModal(true)}>
+            추가하기
+          </Button>
         </div>
+        <div className="content-box">{data.content}</div>
       </div>
     </TopWrapper>
   );

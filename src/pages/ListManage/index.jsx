@@ -1,27 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router";
 import PlaylistContentBox from "../Playlist/components/PlaylistContentBox";
 import { playlistContents } from "../../components/dummyData";
 import { ListDetail } from "../../components/dummyData";
-import profileimg from "../../assets/profileimg.png";
+import images from "../../assets/images.png";
 import { useState } from "react";
 import Modal from "../../components/InputModal";
+import { Button } from "react-bootstrap";
 const PostWrapper = styled.div`
   .main {
-    margin: 0px 100px;
     margin-top: 55px;
+    margin-bottom: 120px;
+    padding: 50px 0 0;
   }
 
   .img-box {
-    width: 100px;
+    width: 240px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
   }
   .title-box {
     display: inline-block;
     margin-left: 10px;
+    padding: 14px 50px 0px 35px;
   }
   .content-box {
-    font-weight: 300;
+    font-weight: 200;
   }
 
   .add-plan-box {
@@ -44,13 +48,18 @@ const PostWrapper = styled.div`
   span {
     display: block;
   }
+  h2 {
+    font-weight: bold;
+  }
+  .contents-wrapper {
+    padding-top: 70px;
+  }
+  .upper-box {
+    padding: 0 0 0 50px;
+  }
 `;
 
 const Index = () => {
-  const history = useHistory();
-  const goBack = () => {
-    history.goBack();
-  };
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -62,13 +71,16 @@ const Index = () => {
     <PostWrapper>
       <div className="main">
         {ListDetail.map((data) => (
-          <div>
-            <img className="img-box" src={profileimg} alt="사진"></img>
+          <div className="upper-box">
+            <img className="img-box" src={images} alt="사진"></img>
             <div className="title-box">
-              <h3>{data.title}</h3>
+              <h2>{data.title}</h2>
               <span>{data.id}</span>
+              <Button variant="primary" onClick={() => setModalIsOpen(true)}>
+                추가하기
+              </Button>
             </div>
-            <h4 className="content-box">{data.content}</h4>
+            <div className="content-box">{data.content}</div>
           </div>
         ))}
         <div className="contents-wrapper">
@@ -76,9 +88,7 @@ const Index = () => {
             <PlaylistContentBox data={data} />
           ))}
         </div>
-        <button className="add-plan-box" onClick={() => setModalIsOpen(true)}>
-          추가하기
-        </button>
+
         <Modal isOpen={modalIsOpen} onCancel={handleClick} />
       </div>
     </PostWrapper>

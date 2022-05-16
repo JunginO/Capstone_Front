@@ -14,10 +14,14 @@ import Setting from "./pages/Setting";
 import Explore from "./pages/Explore";
 import EditProfile from "./pages/Setting/components/EditProfile";
 import Search from "./pages/Search";
+import UserDetail from "./pages/UserDetail";
+import Playbar from "./pages/Playbar";
+import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <BrowserRouter>
       <HeaderContainer />
+      <Playbar />
       <Switch>
         <Route exact path="/" component={Feed} />
         <Route exact path="/setting" component={Setting} />
@@ -30,6 +34,7 @@ const App = () => {
         <Route exact path="/explore" component={Explore} />
         <Route exact path="/editprofile" component={EditProfile} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/userdetail" component={UserDetail} />
       </Switch>
     </BrowserRouter>
   );

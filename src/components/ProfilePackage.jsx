@@ -1,21 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import IdDate from "./IdDate";
+import ShowID from "./ShowID";
 import ProfileImage from "./ProfileImage";
+import { Link } from "react-router-dom";
 const TopWrapper = styled.div`
   .img-id-box {
     display: flex;
-    margin-left: 10px;
+  }
+  .text-link {
+    color: inherit;
+    text-decoration: inherit;
   }
 `;
 
 const ProfilePackage = ({ data }) => {
   return (
     <TopWrapper>
-      <div className="img-id-box">
-        <ProfileImage />
-        <IdDate data={data} />
-      </div>
+      <Link to="/userdetail" className="text-link">
+        <div className="img-id-box">
+          <ProfileImage />
+          <ShowID data={data} />
+        </div>
+      </Link>
     </TopWrapper>
   );
 };

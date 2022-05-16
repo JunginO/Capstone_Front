@@ -1,24 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Card } from "react-bootstrap";
 
 const BoxWrapper = styled.div`
-  .plan-box {
-    border-radius: 1em;
-    border: 1px solid gray;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    background-color: white;
-  }
-  .plan-box-title {
-    display: inline-block;
-    border-right: 1px solid gray;
-    padding: 10px;
-  }
-  .plan-box-content {
-    padding: 10px;
-  }
   span {
     display: block;
   }
@@ -26,13 +10,13 @@ const BoxWrapper = styled.div`
 const PlaylistContentBox = ({ data }) => {
   return (
     <BoxWrapper>
-      <div className="plan-box">
-        <div className="plan-box-title">{data.title}</div>
-        <div className="plan-box-content">
+      <Card className="mt-2">
+        <Card.Header>{data.title}</Card.Header>
+        <Card.Body>
           <span>{data.content}</span>
           <span>소요시간: {data.time} 분</span>
-        </div>
-      </div>
+        </Card.Body>
+      </Card>
     </BoxWrapper>
   );
 };

@@ -1,38 +1,28 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { feed } from "../../components/dummyData";
+import { Form, FormControl, Button, Card } from "react-bootstrap";
 
 const MainWrapper = styled.div`
-  margin-top: 200px;
+  margin-top: 55px;
 `;
 
 const Index = () => {
   const [keyword, setKeyword] = useState("");
-  const filtered = feed.filter((k) => k.title.includes(keyword));
+
   return (
     <MainWrapper>
-      <input
-        type="text"
-        placeholder="검색"
-        onChange={(e) => {
-          setKeyword(e.target.value);
-        }}
-      />
-      <div>
-        {keyword === "" ? (
-          <p>검색어를 입력해보세용</p>
-        ) : (
-          filtered.map((data) => {
-            console.log(data);
-            return (
-              <div>
-                <p>{data.bigtitle}</p>
-                <p>{data.title}</p>
-              </div>
-            );
-          })
-        )}
-      </div>
+      <Card body className="mt-10">
+        <Form className="d-flex">
+          <FormControl
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+          />
+          <Button variant="outline-success">Search</Button>
+        </Form>
+      </Card>
     </MainWrapper>
   );
 };

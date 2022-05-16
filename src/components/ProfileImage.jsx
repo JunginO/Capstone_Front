@@ -5,10 +5,11 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   .profile {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
   }
+  margin-right: 10px;
 `;
 const ProfileImage = () => {
   return (

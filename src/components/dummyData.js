@@ -80,6 +80,44 @@ export const comments = [
   },
 ];
 
+export const exploreDummy = [
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+  {
+    id: "김예원",
+    title: "토익 900 달성",
+  },
+];
 export const ListDetail = [
   {
     id: "윤희서",

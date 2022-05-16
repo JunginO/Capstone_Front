@@ -2,22 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import imgs from "./../../../assets/profileimg.png";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+
 const TopWrapper = styled.div`
-  .top-back {
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-    margin-top: 55px;
-    padding: 20px 0px;
-  }
+  margin-top: 55px;
+  margin-bottom: 110px;
+
   .center-box {
+    padding: 60px 0 0;
     display: flex;
     text-align: center;
     flex-direction: column;
   }
   .profile {
-    width: 60px;
-    height: 60px;
+    width: 175px;
+    height: 175px;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
@@ -38,17 +37,6 @@ const TopWrapper = styled.div`
   }
 `;
 
-const SettingButton = styled(Link)`
-  font-size: 1rem;
-  font-weight: 500;
-  color: white;
-  background-color: blue;
-  text-decoration: none;
-  margin-right: 10px;
-  padding: 5px;
-  border-radius: 5px;
-`;
-
 const SettingTop = () => {
   let id = window.localStorage.getItem("userId");
 
@@ -58,18 +46,17 @@ const SettingTop = () => {
   };
   return (
     <TopWrapper>
-      <div className="top-back">
-        <div className="center-box">
-          <img className="profile" alt="profileimg" src={imgs} />
-          <h3>{JSON.parse(id)}</h3>
-          <div className="button-box">
-            <SettingButton to="/editprofile">정보 수정</SettingButton>
-            <SettingButton to="/" onClick={setData}>
-              로그아웃
-            </SettingButton>
-          </div>
+      <div className="center-box">
+        <img className="profile" alt="profileimg" src={imgs} />
+        <h3>{JSON.parse(id)}</h3>
+        <div className="button-box">
+          <Button href="/editprofile">정보 수정</Button>
+          <Button href="/" onClick={setData}>
+            로그아웃
+          </Button>
         </div>
       </div>
+
       <div className="menu">
         <div className="menu-box">계정 설정</div>
         <div className="menu-box">관심 주제 설정</div>
