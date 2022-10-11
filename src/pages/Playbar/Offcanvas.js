@@ -1,10 +1,9 @@
 import { Button, Offcanvas } from "react-bootstrap";
 import { useState } from "react";
-import { exploreDummy } from "../../components/dummyData";
+import { FinishModal } from "../../components/dummyData";
 import Goal from "../UserDetail/components/Goal";
 export function OffCanvas({ name, ...props }) {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -18,11 +17,12 @@ export function OffCanvas({ name, ...props }) {
           <Offcanvas.Title>Plans</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {exploreDummy.map((data) => (
+          {FinishModal.map((data) => (
             <div>
               <Goal data={data} />
             </div>
           ))}
+          <Button className="m-2" href="/write">다른 목표</Button>
         </Offcanvas.Body>
       </Offcanvas>
     </>

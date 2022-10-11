@@ -18,7 +18,7 @@ const ExploreBox = ({ data }) => {
   return (
     <StyledLink to="/playlist">
       <Card>
-        <Card.Img variant="top" src="logo192.png" />
+        <Card.Img variant="top" src="education.jpg" />
         <Card.Body>
           <Card.Text>
             <p className="mb-1"> {data.title}</p>

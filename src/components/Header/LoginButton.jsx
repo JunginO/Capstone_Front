@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 const BorderedButton = styled(Link)`
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: black;
   text-decoration: none;
   margin-right: 10px;
+  color:white;
 `;
 
 const LoginButton = () => {
@@ -15,9 +16,11 @@ const LoginButton = () => {
 
   return localStorage.getItem("logged-in") ? (
     <div>
-      <BorderedButton to="/">HOME(feed)</BorderedButton>
+      {/*<BorderedButton to="/">HOME(feed)</BorderedButton> <BorderedButton to="/listmanage">listmanage</BorderedButton>
+      
+      */}
       <BorderedButton to="/write">write</BorderedButton>
-      <BorderedButton to="/listmanage">listmanage</BorderedButton>
+     
       <BorderedButton to="/mylist">MyList</BorderedButton>
       <BorderedButton to="/playlist">playlist</BorderedButton>
       <BorderedButton to="/explore">explore</BorderedButton>

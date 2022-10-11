@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   padding-top: 0.6rem;
   padding-bottom: 0.5rem;
 
-  background: lightblue;
+  background: #0c4aa1;
   color: white;
 
   text-align: center;

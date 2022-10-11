@@ -15,13 +15,22 @@ const Index = () => {
         <Tab eventKey="home" title="전체">
           <MyList />
         </Tab>
-        <Tab eventKey="theme1" title="개발자 되기">
+        <Tab eventKey="theme1" title="건강">
           <MyList />
         </Tab>
-        <Tab eventKey="theme2" title="건강">
+        <Tab eventKey="theme2" title="취미">
           <MyList />
         </Tab>
-        <Tab eventKey="theme3" title="클래식">
+        <Tab eventKey="theme3" title="학습">
+          <MyList />
+        </Tab>
+        <Tab eventKey="theme4" title="어학">
+          <MyList />
+        </Tab>
+        <Tab eventKey="theme5" title="IT">
+          <MyList />
+        </Tab>
+        <Tab eventKey="theme6" title="기타">
           <MyList />
         </Tab>
       </Tabs>

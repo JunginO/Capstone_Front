@@ -7,9 +7,12 @@ const PositionCenter = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
 `;
 const MainBox = styled.div`
-  width: 500px;
+margin-top:100px;
+  width: 500px; 
+  margin-bottom: 111px;
 `;
 
 const LogoWrapper = styled.div`
@@ -17,14 +20,14 @@ const LogoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 5rem;
-  background-color: lightblue;
+  background-color: #0c4aa1;
 `;
 const Logo = styled(Link)`
   font-size: 2.4rem;
   letter-spacing: 2px;
   text-decoration: none;
   font-weight: bold;
-  color: black;
+  color: white;
 `;
 const Contents = styled.div`
   background: white;

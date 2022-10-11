@@ -58,14 +58,16 @@ export const playlistContents = [
   },
   {
     title: "2차시",
-    content: "PART5 2회분 풀기,의문사에 집중하기! 들릴때까지 반복",
+    content: "PART1 5회분 풀기, 나만의 메모습관 만들기, 문법 복습하기",
     time: "120",
   },
   {
     title: "3차시",
-    content: "PART5 2회분 풀기, 놓치고 있던 문법 정리하기",
+    content: "PART1 5회분 풀기, 놓치고 있던 문법 정리하기",
     time: "120",
   },
+
+
 ];
 export const comments = [
   {
@@ -86,16 +88,16 @@ export const exploreDummy = [
     title: "토익 900 달성",
   },
   {
-    id: "김예원",
-    title: "토익 900 달성",
+    id: "지민",
+    title: "독일어 100일",
+  },
+  {
+    id: "수빈",
+    title: "HSK 6급따기",
   },
   {
     id: "김예원",
-    title: "토익 900 달성",
-  },
-  {
-    id: "김예원",
-    title: "토익 900 달성",
+    title: "토익스피킹 레벨7",
   },
   {
     id: "김예원",
@@ -125,6 +127,12 @@ export const ListDetail = [
     content: "책을 꾸준히 읽자",
   },
 ];
+
+export const FinishModal=[
+  {
+    title:"토익스피킹 레벨7",
+  },
+]
 export const Playlistlist = [
   {
     title: "매일매일 코어운동",

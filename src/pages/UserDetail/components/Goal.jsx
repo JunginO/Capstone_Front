@@ -27,7 +27,7 @@ const GoalWrapper = styled.div`
 const Goal = ({ data }) => {
   return (
     <GoalWrapper>
-      <div className="goal-box">
+      <div className="m-2">
         <Card body>
           <img src={images} className="goal-img-box" alt="title-img" />
           <div className="goal-info">

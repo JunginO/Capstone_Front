@@ -11,10 +11,13 @@ import { exploreDummy } from "../../../components/dummyData";
 SwiperCore.use([Pagination]);
 
 const MainWrapper = styled.div`
+
+margin: 20px 50px;
   .title {
-    font-size: 20px;
+    font-size: 35px;
     font-weight: 600;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
+    margin-top:20px;
   }
 `;
 
@@ -22,10 +25,28 @@ const SlideStyler = styled(Swiper)`
   position: relative;
 `;
 const Explore = () => {
+  let interest = window.localStorage.getItem("Interest");
+
   return (
     <MainWrapper>
-      <div className="playlist">
+     <div className="playlist"> {/*
         <p className="title">인기 플레이리스트</p>
+        <SlideStyler
+          slidesPerView={5}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
+          className="mySwiper"
+        >
+          {exploreDummy.map((data) => (
+            <SwiperSlide>
+              <ExploreBox data={data} />
+            </SwiperSlide>
+          ))}
+        </SlideStyler>*/}
+
+        <p className="title">{JSON.parse(interest)}</p>
         <SlideStyler
           slidesPerView={5}
           spaceBetween={10}

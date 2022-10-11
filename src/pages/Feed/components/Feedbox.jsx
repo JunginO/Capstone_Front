@@ -56,8 +56,7 @@ const Feedbox = ({ data }) => {
           </Link>
           <div>
             <Liked liked={liked} numliked={numlike} onClick={onClickLike} />
-            <img className="icon-box" src={comment} alt="comment" />
-            <span>{data.comment}</span>
+
           </div>
         </Card.Body>
       </Card>

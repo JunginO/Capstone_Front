@@ -4,8 +4,9 @@ import ProfilePackage from "../../../components/ProfilePackage";
 import { Button } from "react-bootstrap";
 import images from "../../../assets/images.png";
 import { useState } from "react";
-
 import { AlertModal } from "../../../components/AlertModal";
+
+import { ToggleButton } from "react-bootstrap";
 const TopWrapper = styled.div`
   margin-top: 55px;
   padding: 50px 0 0;
@@ -33,6 +34,8 @@ const TopWrapper = styled.div`
 
 const PlaylistTop = ({ data }) => {
   const [showmodal, setShowModal] = useState(false);
+  
+  const [checked, setChecked] = useState(false);
   return (
     <TopWrapper>
       <div className="upper-box">
@@ -48,11 +51,20 @@ const PlaylistTop = ({ data }) => {
             onHide={() => setShowModal(false)}
             text={"추가됨"}
           />
-          <Button variant="primary" onClick={() => setShowModal(true)}>
-            추가하기
-          </Button>
+                <ToggleButton
+        className="m-2"
+        id="toggle-check"
+        type="checkbox"
+        variant="outline-primary"
+        checked={checked}
+        value="0"
+        onChange={(e) => setChecked(e.currentTarget.checked)}
+        onClick={() => {setShowModal(true)}}
+      >
+        {checked?"추가됨":"추가하기"}
+      </ToggleButton>
+ 
         </div>
-        <div className="content-box">{data.content}</div>
       </div>
     </TopWrapper>
   );

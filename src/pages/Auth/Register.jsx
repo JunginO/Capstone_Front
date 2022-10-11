@@ -4,16 +4,16 @@ import { AuthButton } from ".";
 import { AuthWrapper } from ".";
 import { AuthContent } from ".";
 import { InputWithLabel } from ".";
-
+import axios from "axios";
+import { IdCheckModal } from "./components/IdCheckModal";
 const Register = () => {
+  const [showmodal, setShowModal] = useState(false);
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-  const [email, setEmail] = useState("");
-
+  const [nickname, setNickname] = useState("");
   const [pwError, setpwError] = useState(0);
   const [pwReError, setpwReError] = useState(0);
-  const [errorMail, setErrorMail] = useState(0);
 
   const onChangeId = (e) => {
     setId(e.target.value);
@@ -24,11 +24,10 @@ const Register = () => {
     const patternSpecial = /[~!@#$%^&*()_+|<>?:{}]/;
     const patternEng = /[a-zA-Z]/;
     const patternNum = /[0-9]/;
-
     if (
       !patternSpecial.test(value) ||
       !patternEng.test(value) ||
-      !patternNum.test(value)
+      !patternNum.test(value)||value.length<6
     ) {
       setpwError(1);
     } else {
@@ -45,18 +44,34 @@ const Register = () => {
     }
     setRePassword(value);
   };
-  const onChangeEmail = (e) => {
-    const { value } = e.target;
-    const patternEmail =
-      /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-
-    if (!patternEmail.test(value)) {
-      setErrorMail(1);
-    } else {
-      setErrorMail(0);
-    }
-    setEmail(value);
+  const onChangeNickname = (e) => {
+    setNickname(e.target.value);
+    
   };
+  const onClickLogin=async()=>{
+  try{
+    const result=await axios({
+      method:"POST",
+      url:`http://3.218.116.118:5000/api/user`,
+      header:{
+        'Content-Type' : 'application/x-www-form-urlencoded; '
+ 
+      },
+      data:{
+        user_id: id,
+        password: password,
+        nickname: nickname,
+ },
+    });
+    if(result.data.success){
+      alert(result.message);
+    }
+  }
+  catch{
+    console.log("error");
+  }
+}
+  
 
   return (
     <AuthWrapper>
@@ -68,7 +83,10 @@ const Register = () => {
           type="text"
           value={id}
           onChange={onChangeId}
+          disabled
         />
+        <button onClick={()=>setShowModal(true)}>아이디 체크</button>
+        <IdCheckModal setId={setId} show={showmodal} onHide={()=>setShowModal(false)}/>
         <InputWithLabel
           label="비밀번호"
           name="password"
@@ -87,30 +105,16 @@ const Register = () => {
           onChange={onChangeRePassWord}
         />
         {pwReError === 1 && <p style={{ color: "red" }}> 비밀번호 불일치</p>}
-        <InputWithLabel
-          label="이름"
-          name="name"
-          placeholder="이름"
-          type="name"
-        />
+
         <InputWithLabel
           label="닉네임"
           name="nickname"
           placeholder="닉네임"
           type="nickname"
+          onChange={onChangeNickname}
         />
-        <InputWithLabel
-          label="이메일"
-          name="email"
-          placeholder="이메일"
-          type="email"
-          value={email}
-          onChange={onChangeEmail}
-        />{" "}
-        {errorMail === 1 && (
-          <p style={{ color: "red" }}>메일 형식이 맞지 않습니다</p>
-        )}
-        <AuthButton>로그인</AuthButton>
+        
+        <AuthButton onClick={onClickLogin}>로그인</AuthButton>
       </AuthContent>
     </AuthWrapper>
   );
